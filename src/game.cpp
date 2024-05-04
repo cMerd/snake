@@ -97,6 +97,13 @@ void game::update_map() {
       this->food.get_new();
     }
   }
+  while (
+      this->game_map[this->food.get_pos().first][this->food.get_pos().second] ==
+          BLOCK::SNAKE_HEAD or
+      this->game_map[this->food.get_pos().first][this->food.get_pos().second] ==
+          BLOCK::SNAKE_TAIL) {
+    this->food.get_new();
+  }
   for (size_t i = 0; i < this->game_map.size(); i++) {
     for (size_t j = 0; j < this->game_map[i].size(); j++) {
       this->game_map[i][j] = BLOCK::EMPTY;
