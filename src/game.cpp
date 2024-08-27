@@ -66,10 +66,10 @@ void game::draw_map() const {
 void game::draw_block(int x, int y, BLOCK type) const {
   switch (type) {
   case EMPTY:
-    DrawLine(x, y, x + this->BLOCK_SIZE, y, BROWN);
-    DrawLine(x, y, x, y + this->BLOCK_SIZE, BROWN);
+    DrawLine(x, y, x + this->BLOCK_SIZE, y, DARKGRAY);
+    DrawLine(x, y, x, y + this->BLOCK_SIZE, DARKGRAY);
     DrawLine(x + this->BLOCK_SIZE, y, x + this->BLOCK_SIZE,
-             y + this->BLOCK_SIZE, BROWN);
+             y + this->BLOCK_SIZE, DARKGRAY);
     break;
   case SNAKE_TAIL:
   case SNAKE_HEAD:
