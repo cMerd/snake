@@ -66,10 +66,16 @@ void game::draw_map() const {
 void game::draw_block(int x, int y, BLOCK type) const {
   switch (type) {
   case EMPTY:
+    /*
     DrawLine(x, y, x + this->BLOCK_SIZE, y, DARKGRAY);
     DrawLine(x, y, x, y + this->BLOCK_SIZE, DARKGRAY);
     DrawLine(x + this->BLOCK_SIZE, y, x + this->BLOCK_SIZE,
              y + this->BLOCK_SIZE, DARKGRAY);
+             */
+    DrawRectangle(x, y, this->BLOCK_SIZE, this->BLOCK_SIZE,
+                  ((x / this->BLOCK_SIZE) % 2 == (y / this->BLOCK_SIZE) % 2
+                       ? BG1
+                       : BG2));
     break;
   case SNAKE_TAIL:
   case SNAKE_HEAD:

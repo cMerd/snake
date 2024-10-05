@@ -5,6 +5,7 @@
 #include <utility>
 #include <vector>
 #include "apple.hpp"
+#include <raylib.h>
 
 class game {
 public:
@@ -28,6 +29,8 @@ private:
   constexpr static int SCREEN_WIDTH = (40 * BLOCK_SIZE);
   constexpr static int SCREEN_HEIGHT = (30 * BLOCK_SIZE);
   constexpr static int FRAME_RATE = 60;
+  constexpr static Color BG1 = (Color){9, 114, 235, 255};
+  constexpr static Color BG2 = (Color){115, 226, 230, 255};
 
   std::vector<std::vector<BLOCK>> game_map;
   snake player;
